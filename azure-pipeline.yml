@@ -46,4 +46,6 @@ steps:
     displayName: Publish project
     inputs:
       command: publish
-      arguments: -c 'Release'
+      arguments: -c "Release" -o "$(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
+
+  - publish: 
