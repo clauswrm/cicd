@@ -1,13 +1,10 @@
 name: deploy-website
 
 on:
-  push:
-    branches:
-      - "*"
   workflow_dispatch:
 
 env:
-  AZURE_RESOURCEGROUP_NAME: #REPLACE
+  AZURE_RESOURCEGROUP_NAME: kp2021s4-clauswilhelmmartinsen-rg
   ENVIRONMENT: nonprod
 
 jobs:
