@@ -48,4 +48,6 @@ steps:
       command: publish
       arguments: -c "Release" -o "$(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
 
-  - publish: 
+  - publish: "$(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
+    displayName: Publish artifact
+    artifact: WebApp
