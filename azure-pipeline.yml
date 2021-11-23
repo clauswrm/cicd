@@ -31,3 +31,19 @@ steps:
   - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
     displayName: "Write build info"
     workingDirectory: $(wwwrootDir)
+
+  - task: DotNetCoreCLI@2
+    displayName: Download NuGet packages
+    inputs:
+      command: restore
+
+  - task: DotNetCoreCLI@2
+    displayName: Build project
+    inputs:
+      command: build
+
+  - task: DotNetCoreCLI@2
+    displayName: Publish project
+    inputs:
+      command: publish
+      arguments: -c 'Release'
