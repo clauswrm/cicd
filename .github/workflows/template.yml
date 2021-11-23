@@ -25,3 +25,9 @@ jobs:
         with:
           name: WebApp
           path: ${{ github.WORKSPACE }}/Release
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact from build job
+        run: echo "Take it from here"
