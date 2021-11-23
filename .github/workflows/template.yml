@@ -19,8 +19,8 @@ jobs:
       - run: gulp
       - run: dotnet restore
       - run: dotnet build --no-restore
-      - run: dotnet publish -c ${{ env.buildConfiguration }} -o ${{ env.GITHUB_WORKSPACE }}/Release
+      - run: dotnet publish -c ${{ env.buildConfiguration }} -o ${{ github.WORKSPACE }}/Release
       - uses: actions/upload-artifact@v2
         with:
           name: WebApp
-          path: ${{ env.GITHUB_WORKSPACE }}/Release
+          path: ${{ github.WORKSPACE }}/Release
